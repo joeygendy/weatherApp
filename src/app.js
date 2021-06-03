@@ -21,6 +21,8 @@ hbs.registerPartials(partialsPath);
 // Setup static directory to serve assets to server
 app.use(express.static(publicDirectoryPath));
 
+const port = process.env.PORT || 3000;
+
 // app.get basically says "when user gets this page ... do this"
 app.get("", (req, res) => {
   res.render("index", {
@@ -101,6 +103,6 @@ app.get("*", (req, res) => {
 });
 
 // One statement to actually set up server
-app.listen(3000, () => {
-  console.log("Server is up on port 3000");
-}); //port 3000 since we're viewing website on local environment
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
+});
