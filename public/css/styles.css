@@ -53,3 +53,18 @@ button {
   color: white;
   padding: 8px;
 }
+
+.displayWeather {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.weatherIcon {
+  width: auto;
+  margin-right: 12px;
+  object-fit: contain;
+}
+
+.hidden {
+  display: none;
+}

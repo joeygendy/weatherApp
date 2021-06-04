@@ -13,12 +13,12 @@ const forecast = (latitude, longitude, callback) => {
       callback("Unable to find location", undefined);
     } else {
       const data = body.current;
-      callback(
-        undefined,
-        `It is currently ${data.weather_descriptions[0].toLowerCase()} with ${
+      callback(undefined, {
+        description: `It is currently ${data.weather_descriptions[0].toLowerCase()} with ${
           data.temperature
-        } degrees outside. It feels like ${data.feelslike} degrees out`
-      );
+        } degrees outside. It feels like ${data.feelslike} degrees out`,
+        image: data.weather_icons,
+      });
     }
   });
 };
